@@ -25,7 +25,11 @@ const calculate = (arr: CalculatorInput): number => {
     }
   }
 
-  return stack.reduce((acc, curr) => acc + curr, 0);
+  const result = stack.some((val) => isNaN(val))
+    ? NaN
+    : stack.reduce((acc, curr) => acc + curr, 0);
+
+  return result;
 };
 
 export default calculate;

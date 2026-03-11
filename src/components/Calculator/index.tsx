@@ -47,6 +47,7 @@ const Calculator = () => {
           .split(STR_TO_ARR_SPLIT)
           .filter(Boolean);
         const cal = calculate(convertStrToArr);
+
         setResult(cal);
       } else if (val == "C") {
         setInput("");
@@ -82,7 +83,7 @@ const Calculator = () => {
     // remove last operator and insert new operator if user click operator multiple time at once
     setInput((prev) => {
       const tempInput = prev.split(STR_TO_ARR_SPLIT).filter(Boolean);
-      console.log(tempInput);
+
       tempInput.pop();
       tempInput.push(val);
       return tempInput.join("");
@@ -99,7 +100,17 @@ const Calculator = () => {
         name="number"
         readOnly={true}
       />
-      <p>{isError ? "Error" : result || result == 0 ? result : ""}</p>
+
+      <p>
+        {isError
+          ? "Error"
+          : Number.isNaN(result)
+            ? "NaN"
+            : result !== null
+              ? result
+              : ""}
+      </p>
+
       <div className={styles.calculator_btn}>
         {calculator_value.map((item) => {
           return (
