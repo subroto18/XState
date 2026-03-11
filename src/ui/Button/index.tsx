@@ -1,4 +1,5 @@
-import "./button.css";
+import styles from "./Button.module.css";
+
 type Props = {
   value: string | number;
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
@@ -9,7 +10,7 @@ const Button = ({ value, onClick, key }: Props) => {
   return (
     <button
       key={key}
-      className={`button`}
+      className={`${styles.button}`}
       onClick={(e) => onClick(e)}
       value={value}
     >

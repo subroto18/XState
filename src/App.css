@@ -11,8 +11,8 @@
   text-align: center;
   background-color: azure;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  width: 40%;
-  height: 80%;
+  width: 20%;
+  height: 60%;
   border-radius: 10px;
   padding: 10px 20px;
 }
@@ -24,4 +24,16 @@
 }
 .submit_btn {
   margin-top: 10px;
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+  .parent {
+    width: 40%;
+  }
+}
+
+@media (max-width: 600px) {
+  .parent {
+    width: 80%;
+  }
 }
