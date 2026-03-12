@@ -28,7 +28,7 @@ const Index = () => {
       </div>
       <h3 className="word_text">Definition:</h3>
       <p className="definition">
-        {definition ?? "Word not found in the dictionary."}
+        {definition ? definition : "Word not found in the dictionary."}
       </p>
     </Layout>
   );
